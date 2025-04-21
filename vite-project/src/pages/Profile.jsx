@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import React from "react";
 
 const Profile = () => {
-  const { user } = useAuth();
+  const { user } = useAuth(); // Assuming user is an object
   const [skills, setSkills] = useState([
     { id: 1, title: "JavaScript", description: "Programming language for web development." },
     { id: 2, title: "React", description: "JavaScript library for building UIs." },
@@ -27,13 +27,16 @@ const Profile = () => {
     setSkills(skills.filter((skill) => skill.id !== id));
   };
 
+  // Ensure user object exists and has email
+  const userName = user?.email || "Guest";
+
   return (
     <div className="p-6 max-w-4xl mx-auto mt-10 bg-white rounded-lg shadow-lg">
       <div className="flex flex-col items-center">
         {/* Profile Picture */}
         <div className="mb-6">
           <img
-            src={`https://ui-avatars.com/api/?name=${user}&size=128`}
+            src={`https://ui-avatars.com/api/?name=${userName}&size=128`}
             alt="Profile Avatar"
             className="w-32 h-32 rounded-full border-4 border-blue-500 shadow-md"
           />
@@ -41,7 +44,7 @@ const Profile = () => {
 
         {/* Profile Details */}
         <div className="text-center mb-6">
-          <h2 className="text-3xl font-bold text-blue-600">{user}'s Profile</h2>
+          <h2 className="text-3xl font-bold text-blue-600">{userName}'s Profile</h2>
           <p className="text-gray-600 mt-2 text-lg">Welcome to your personal space!</p>
         </div>
 
@@ -94,7 +97,7 @@ const Profile = () => {
         {/* Contact Section */}
         <div className="mt-8 text-center">
           <h3 className="text-2xl font-semibold text-blue-600 mb-4">Contact Information</h3>
-          <p className="text-gray-600">Email: {user.toLowerCase()}@example.com</p>
+          <p className="text-gray-600">Email: {user?.email?.toLowerCase() || "Not Available"}</p>
           <p className="text-gray-600">Location: City, Country</p>
         </div>
       </div>

@@ -1,15 +1,15 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
 import React from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";  // Import useAuth from the correct path
 
 const Navbar = () => {
-  const { user, logout, isLoggedIn } = useAuth();
+  const { user, logout, isLoggedIn } = useAuth();  // Use the context here
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleLogout = () => {
-    logout();
-    navigate("/login");
+    logout();  // Calling the logout function to clear user state and localStorage
+    navigate("/login");  // Redirect to the login page after logout
   };
 
   // Function to highlight the active nav link
@@ -33,7 +33,7 @@ const Navbar = () => {
         {/* Auth Section */}
         {isLoggedIn ? (
           <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-600">Hi, {user}</span>
+            <span className="text-sm text-gray-600">Hi, {user?.email}</span> {/* Safely accessing user.email */}
             <button
               onClick={handleLogout}
               className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
