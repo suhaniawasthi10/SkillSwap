@@ -47,6 +47,3 @@ SkillSwap offers a seamless way for individuals to connect and learn from one an
 3. **Run the development server**
    ```bash
    npm run dev
-
-
-
