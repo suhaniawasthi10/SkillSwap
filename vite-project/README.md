@@ -1,12 +1,52 @@
-# React + Vite
+# SkillSwap
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SkillSwap is a peer-to-peer skill-sharing platform that enables users to showcase their talents, discover others' skills, and schedule learning sessions. It fosters community-driven learning by encouraging collaboration and knowledge exchange.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Description
 
-## Expanding the ESLint configuration
+SkillSwap offers a seamless way for individuals to connect and learn from one another. Users can create profiles, list skills they want to teach, explore a variety of skills from others, and request personalized sessions. The current version uses dummy authentication and mock data to demonstrate core functionalities.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Features
+
+- User authentication with dummy login (localStorage-based)
+- Profile creation and skill management
+- Explore page for browsing available skills
+- Skill detail page with session request functionality
+- Testimonial and Help/About pages
+- Responsive design using Tailwind CSS
+- Dynamic routing using React Router
+
+---
+
+## Tech Stack
+
+- **Frontend**: React
+- **Styling**: Tailwind CSS
+- **Routing**: React Router DOM
+- **State Management**: React Context API
+- **Mock API**: MirageJS
+- **Icons**: Heroicons
+
+---
+
+## Setup Instructions
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/suhaniawasthi10/SkillSwap.git
+   cd SkillSwap
+
+2. **Install dependencies**
+   ```bash
+   npm install
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+
+
+
